@@ -48,7 +48,13 @@ namespace cf_dotnet_prework_calculator
                         Menu();
                         break;
                     case 4:
-                        Divide();
+                        Console.WriteLine("\nPlease enter the first number you would like to divide from: \n");
+                        int div1 = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("\nPlease enter the second number you would like to divide by: \n");
+                        int div2 = Int32.Parse(Console.ReadLine());
+                        int quotient = Divide(div1, div2);
+                        Console.WriteLine($"\nThe quotient of {div1} and {div2} is {quotient}. \n");
+                        Menu();
                         break;
                     case 5:
                         System.Environment.Exit(0);
@@ -79,9 +85,9 @@ namespace cf_dotnet_prework_calculator
             return mult1 * mult2;
         }
 
-        static void Divide()
+        static int Divide(int div1, int div2)
         {
-
+            return div1 / div2;
         }
     }
 }
