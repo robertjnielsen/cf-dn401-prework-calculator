@@ -22,15 +22,21 @@ namespace cf_dotnet_prework_calculator
                 {
                     case 1:
                         Console.WriteLine("\nPlease enter the first number you would like to add: \n");
-                        int num1 = Int32.Parse(Console.ReadLine());
+                        int add1 = Int32.Parse(Console.ReadLine());
                         Console.WriteLine("\nPlease enter the second number you would like to add: \n");
-                        int num2 = Int32.Parse(Console.ReadLine());
-                        int sum = Add(num1, num2);
-                        Console.WriteLine($"\nThe sum of {num1} and {num2} is {sum}. \n");
+                        int add2 = Int32.Parse(Console.ReadLine());
+                        int sum = Add(add1, add2);
+                        Console.WriteLine($"\nThe sum of {add1} and {add2} is {sum}. \n");
                         Menu();
                         break;
                     case 2:
-                        Subtract();
+                        Console.WriteLine("\nPlease enter the first number you would like to subtract from: \n");
+                        int sub1 = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("\nPlease enter the second number you would like to subtract: \n");
+                        int sub2 = Int32.Parse(Console.ReadLine());
+                        int dif = Subtract(sub1, sub2);
+                        Console.WriteLine($"\nThe difference of {sub2} from {sub1} is {dif}. \n");
+                        Menu();
                         break;
                     case 3:
                         Multiply();
@@ -57,9 +63,9 @@ namespace cf_dotnet_prework_calculator
             return num1 + num2;
         }
 
-        static void Subtract()
+        static int Subtract(int sub1, int sub2)
         {
-
+            return sub1 - sub2;
         }
 
         static void Multiply()
