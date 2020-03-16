@@ -39,7 +39,13 @@ namespace cf_dotnet_prework_calculator
                         Menu();
                         break;
                     case 3:
-                        Multiply();
+                        Console.WriteLine("\nPlease enter the first number you would like to multiply: \n");
+                        int mult1 = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("\nPlease enter the second number you would like to multiply: \n");
+                        int mult2 = Int32.Parse(Console.ReadLine());
+                        int prod = Multiply(mult1, mult2);
+                        Console.WriteLine($"\nThe product of {mult1} and {mult2} is {prod}. \n");
+                        Menu();
                         break;
                     case 4:
                         Divide();
@@ -68,9 +74,9 @@ namespace cf_dotnet_prework_calculator
             return sub1 - sub2;
         }
 
-        static void Multiply()
+        static int Multiply(int mult1, int mult2)
         {
-
+            return mult1 * mult2;
         }
 
         static void Divide()
