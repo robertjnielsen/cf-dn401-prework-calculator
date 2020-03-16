@@ -21,7 +21,13 @@ namespace cf_dotnet_prework_calculator
                 switch (menuOption)
                 {
                     case 1:
-                        Add();
+                        Console.WriteLine("\nPlease enter the first number you would like to add: \n");
+                        int num1 = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("\nPlease enter the second number you would like to add: \n");
+                        int num2 = Int32.Parse(Console.ReadLine());
+                        int sum = Add(num1, num2);
+                        Console.WriteLine($"\nThe sum of {num1} and {num2} is {sum}. \n");
+                        Menu();
                         break;
                     case 2:
                         Subtract();
@@ -46,9 +52,9 @@ namespace cf_dotnet_prework_calculator
             }
         }
 
-        static void Add()
+        static int Add(int num1, int num2)
         {
-
+            return num1 + num2;
         }
 
         static void Subtract()
